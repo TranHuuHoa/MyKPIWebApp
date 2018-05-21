@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Prime Number Check</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        <script src="main.js"></script>
+        <script type="text/javascript">
+        function PrimeNumber()
+        {
+            var input = Number(document.getElementById('InputNumber').value);
+            if (input <= 1) {
+                alert('not a prime number');
+            }
+
+            if (input === 2) return true;
+
+  // storing the calculated value would be much 
+  // better than calculating in each iteration
+            var sqrt = Math.sqrt(input);
+
+            for (var i = 2; i <= sqrt; i++) 
+            if (input % i === 0) return false;
+            return true;
+    </script>
+</head>
+<body>
+    <h1>Prime Number check</h1>
+    <Form>
+        Input Number: <input type="number" id="InputNumber"> <br>
+        Check: <button type="button" onclick="PrimeNumber()">Check Prime Number</button>
+    </Form>
+</body>
+</html>
